@@ -11,7 +11,7 @@ function getNthfib(n)
 var n = "fdds";
 
 if (typeof n === 'string') {
-    console.log("It's a string please enter a integer");
+    console.log("It's a string please enter a number");
 }
 
 if(typeof n === Number)

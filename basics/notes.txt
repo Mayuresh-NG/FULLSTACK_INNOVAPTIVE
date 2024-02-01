@@ -7,3 +7,5 @@ null
 Object
 
 Symbol
+
+node is a runtime environment for js
