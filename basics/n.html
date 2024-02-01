@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci sequence</title>
+</head>
+<body>
+    <h1>This is a webpage for getting a fibonacci sequence from a number</h1>
+    <label>Enter a number</label>
+    <input type="number" id="1">
+    <button onclick="getNthFib()">find</button>
+</body>
+<script>
+
+    function vali()
+    {
+
+    }
+
+    function getNthFib(n)
+    {
+        if(n<=1)
+        {
+            return n;
+        }
+        return fib(n-1)+fib(n-2);
+    }
+
+    var result = getNthFib(n);
+    document.getElementById("result").innerHTML = "Fibonacci(" + n + ") = " + result;
+</script>
+</html>

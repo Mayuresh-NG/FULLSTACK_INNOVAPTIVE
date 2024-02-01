@@ -1,0 +1,9 @@
+data types in js
+Number,BigInt
+Boolean
+String
+undefined
+null
+Object
+
+Symbol
