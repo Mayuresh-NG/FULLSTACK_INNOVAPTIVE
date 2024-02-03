@@ -9,3 +9,10 @@ Object
 Symbol
 
 node is a runtime environment for js
+
+resolve function is used to fulfil the promise
+
+setTimeout is a built-in JavaScript function that schedules a
+function to be executed after a specified delay in milliseconds (ms).
+
+when the 2 sec completed resolve

@@ -1,0 +1,20 @@
+What is browser
+allows users to access and navigate www to view web pages
+it acts as a client
+
+browser requests and recieve webpages from sever
+
+browsers use the internet to connect to web servers
+
+IP addresses are used for communication between devices on the Internet.
+Web servers have IP addresses, and browsers use these addresses to locate and communicate with servers.
+
+Ports are numerical identifiers used to distinguish different services running on the same device.
+port : 80 for http
+and port: 443 for https
+
+It is a protocol that defines how messages are formatted and transmitted, as well 
+as how web browsers and servers should respond to various commands.
+
+types of parameter 
+query params and url params
