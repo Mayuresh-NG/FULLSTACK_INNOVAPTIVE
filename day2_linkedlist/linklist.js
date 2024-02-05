@@ -1,27 +1,32 @@
 /**
-* @class node - A class representing a node in a linked list.
-* @param {any} value - The value to be stored in the node.
-* @property {any} value - The value stored in the node.
-* @property {node} next - A reference to the next node in the linked list.
-*/
+ * Creating a linked list data structure and performing various operations on 
+ * that linked list like insertion,deletion,searching
+ */
+
+/**
+ * @class node - A class representing a node in a linked list.
+ * @property {any} value - The value stored in the node.
+ * @property {node} next - A reference to the next node in the linked list.
+ */
 class node {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
- }
- 
- /**
+}
+
+/**
  * @class LL - A class representing a linked list.
  * @property {node} head - A reference to the first node in the linked list.
  */
- class LL {
+class LL {
   constructor() {
     this.head = null;
   }
- 
+
   /**
-   * @method insertNode - Inserts a new node with the given value at the end of the linked list.
+   * @method insertNode - Inserts a new node with the given value at the end of
+   *  the linked list.
    * @param {any} value - The value to be stored in the new node.
    * @return {void}
    */
@@ -37,9 +42,10 @@ class node {
       current.next = newNode;
     }
   }
- 
+
   /**
-   * @method insertAthead - Inserts a new node with the given value at the beginning of the linked list.
+   * @method insertAthead - Inserts a new node with the given value at the 
+   * beginning of the linked list.
    * @param {any} value - The value to be stored in the new node.
    * @return {void}
    */
@@ -48,9 +54,10 @@ class node {
     newNode.next = this.head;
     this.head = newNode;
   }
- 
+
   /**
-   * @method inserAtany - Inserts a new node with the given value at the specified index in the linked list.
+   * @method inserAtany - Inserts a new node with the given value at the 
+   * specified index in the linked list.
    * @param {any} value - The value to be stored in the new node.
    * @param {number} index - The index at which the new node should be inserted.
    * @return {void}
@@ -60,23 +67,23 @@ class node {
       console.error("Index must be non-negative.");
       return;
     }
- 
+
     const newNode = new node(value);
- 
+
     if (index === 0) {
       this.insertAthead(value);
     }
- 
+
     let current = this.head;
     let prev = null;
     let trackposition = 0;
- 
+
     while (current && trackposition < index) {
       prev = current;
       current = current.next;
       trackposition++;
     }
- 
+
     if (trackposition === index) {
       newNode.next = current;
       prev.next = newNode;
@@ -84,9 +91,10 @@ class node {
       console.error("Index out of bounds.");
     }
   }
- 
+
   /**
-   * @method searchNode - Searches for a node with the given target value in the linked list.
+   * @method searchNode - Searches for a node with the given target value in the
+   *  linked list.
    * @param {any} target - The target value to be searched.
    * @return {void}
    */
@@ -106,9 +114,10 @@ class node {
       console.log(target + " is not present in linked list");
     }
   }
- 
+
   /**
-   * @method deleteNode - Deletes the first node with the given target value in the linked list.
+   * @method deleteNode - Deletes the first node with the given target value in
+   *  the linked list.
    * @param {any} target - The target value of the node to be deleted.
    * @return {void}
    */
@@ -116,7 +125,7 @@ class node {
     let current = this.head;
     let previous = null;
     let flag = 0;
- 
+
     while (current) {
       if (current.value === target) {
         if (previous) {
@@ -134,42 +143,64 @@ class node {
       console.log("couldnt find");
     }
   }
- 
+
   /**
-   * @method display - Displays the linked list by printing the value of each node.
+   * @method display - Displays the linked list by printing the value of each
+   * node.
    * @return {void}
    */
   display() {
     let current = this.head;
+    let result = "";
+
     while (current) {
-      console.log(current.value);
+      result += current.value;
+      if (current.next) {
+        result += "->";
+      } else {
+        result += "->null";
+      }
       current = current.next;
     }
+
+    console.log(result);
   }
- }
- 
- /**
- * @var Linklist - An instance of the LL class.
+}
+
+/**
+ * @let Linklist - An instance of the LL class.
  */
- var Linklist = new LL();
- Linklist.insertNode("1");
- Linklist.insertNode("2");
- Linklist.insertNode("3");
- Linklist.insertNode("4");
- 
- Linklist.insertAthead("5");
- 
- console.log("\n");
- Linklist.searchNode("4");
- Linklist.searchNode("6");
- console.log("\n");
- 
- Linklist.display();
- 
- console.log("\n");
- Linklist.inserAtany("100", 2);
- Linklist.display();
- 
- Linklist.deleteNode("4");
- 
- Linklist.display();
+let Linklist = new LL();
+
+//pushing nodes from back 1->2->3->4
+console.log("puhing nodes from back of the linked list");
+Linklist.insertNode("1");
+Linklist.insertNode("2");
+Linklist.insertNode("3");
+Linklist.insertNode("4");
+Linklist.display();
+
+//  push node at head position 5->1->2->3->4->5
+console.log("\nPushing node at the front of the Linked List");
+Linklist.insertAthead("5");
+Linklist.display();
+
+//  search by value in linked list
+console.log("\nSearching in linked list");
+Linklist.searchNode("4");
+Linklist.searchNode("6");
+Linklist.display();
+
+//  insert at any position according to index
+console.log("\nInsert at any index position")
+Linklist.inserAtany("100", 2);
+Linklist.display();
+
+//  deleting node from linked list from any position
+console.log("\nDeleting a node from linked list");
+Linklist.deleteNode("4");
+Linklist.display();
+
+console.log("\nDelete from any position")
+Linklist.deleteNode("2");
+Linklist.display();

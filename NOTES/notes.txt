@@ -1,11 +1,15 @@
 data types in js
-Number,BigInt
+Number
+64 bits
+sign(1-neg,0-pos)
+float
+
 Boolean
 String
 undefined
 null
 Object
-
+BigInt
 Symbol
 
 node is a runtime environment for js

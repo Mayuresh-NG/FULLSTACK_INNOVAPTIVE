@@ -1,4 +1,4 @@
-/** Welcome to the Firefly program! This is an original implementation of a dynamic star 
+/**This is an implementation of a dynamic star 
  * in a 30 by 50 grid. The goal is to create a grid with one random position marked by 
  * a '*' character, and the rest of the grid filled with spaces. The '*' character, 
  * representing our "Firefly," will then move randomly in any of the 9 possible directions 
