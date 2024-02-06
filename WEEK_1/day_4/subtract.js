@@ -2,12 +2,10 @@
  * This is a program to subtract two arrays such that they imitates arithmetic style subtraction of numbers
  */
 
-/**
- * @function sub - subtracts the two array
- * @param {Array} arr1 - First array
- * @param {Array} arr2 - Second array
- */
 
+/**
+ * @function validation - It is a function to handle invalid user inputs
+ */
 function validation(arr1, arr2) {
     if(arr1.length==0 || arr2.length==0)
     {
@@ -20,6 +18,11 @@ function validation(arr1, arr2) {
     else return true;
 }
 
+/**
+ * @function sub - subtracts the two array
+ * @param {Array} arr1 - First array
+ * @param {Array} arr2 - Second array
+ */
 function sub(arr1, arr2) {
   if (validation(arr1, arr2) == true) {
     /**
