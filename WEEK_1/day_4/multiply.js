@@ -58,8 +58,8 @@ function multiply(arr1, arr2) {
   return result.join("");
 }
 
-let num1 = [1,2,3,2,3,4,5,6,9];
-let num2 = [-1, 2,3,4,7,7,5,5,4,3,9,8];
+let num1 = [1,2];
+let num2 = [1,2];
 
 console.log(
   "Multiplication of ",

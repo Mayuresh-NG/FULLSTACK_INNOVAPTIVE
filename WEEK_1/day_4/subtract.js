@@ -6,13 +6,37 @@
  * @function validation - It is a function to handle invalid user inputs
  */
 function validation(arr1, arr2) {
-  if (arr1.length == 0 || arr2.length == 0) {
-    throw new Error("NUll arrays are not accepted");
+  function isSingleDigit(num) {
+    return num >= 0 && num <= 9;
   }
+
+  if (arr1.length === 0 || arr2.length === 0) {
+    throw new Error("Null arrays are not accepted");
+  }
+
   if (arr1[0] < 0 || arr2[0] < 0) {
     throw new Error("Negative values in the array are not allowed.");
-  } else return true;
+  }
+
+  if (!isSingleDigit(arr1[0]) || !isSingleDigit(arr2[0])) {
+    throw new Error("Only single digits are allowed in the first position of the arrays");
+  }
+
+  for (let i = 1; i < arr1.length; i++) {
+    if (!isSingleDigit(arr1[i])) {
+      throw new Error(`Element at index ${i} in the first array must be a single digit`);
+    }
+  }
+
+  for (let i = 1; i < arr2.length; i++) {
+    if (!isSingleDigit(arr2[i])) {
+      throw new Error(`Element at index ${i} in the second array must be a single digit`);
+    }
+  }
+
+  return true;
 }
+
 
 /**
  * @function sub - subtracts the two array
@@ -61,20 +85,36 @@ function sub(arr1, arr2) {
 
     // if number to be subtracted is smaller than number  being subtracted from
     // then add negative sign in front
-    if (arr1 < arr2) {
+    if (carry > 0) {
+      res.unshift(carry);
+    }
+
+    let lenarr1 = parseInt(arr1.join(""), 10);
+    let lenarr2 = parseInt(arr2.join(""), 10);
+    if (lenarr1 < lenarr2) {
+      if (res[0] == 0) {
+        res.shift();
+      }
       res.unshift("-");
     }
+
     // if there is extra 0 in front remove it
     else if (res[0] == 0) {
       res.shift();
+    }
+
+    if(arr1.length==arr2.length && lenarr1>lenarr2)
+    {
+      res = lenarr1-lenarr2
+      return res.toString()
     }
 
     return res.join("");
   }
 }
 
-const num1 = [-1, 2, 3]; //first number
-const num2 = [5]; //second number
+const num1 = [1,2,3]; //first number
+const num2 = [4,5,0]; //second number
 
 console.log(
   "Subtraction of",
@@ -84,3 +124,4 @@ console.log(
   "=",
   sub(num1, num2)
 );
+
