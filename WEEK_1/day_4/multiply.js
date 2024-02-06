@@ -6,64 +6,67 @@
  */
 
 function multiply(arr1, arr2) {
-	// flag to checck negative numbers
-    let flag=0
+  // flag to check negative numbers
+  let flag = 0;
 
-    // if both numbers are negative then convert them to postive by changing sign
-    if(arr1[0]<0 && arr2[0]<0)
-    {
-        arr1[0] = -arr1[0]
-        arr2[0] = -arr2[0]
+  // if both numbers are negative then convert them to postive by changing sign
+  if (arr1[0] < 0 && arr2[0] < 0) {
+    arr1[0] = -arr1[0];
+    arr2[0] = -arr2[0];
+  }
+
+  // changing sign for neagtive number
+  else if (arr1[0] < 0) {
+    flag = 1;
+    arr1[0] = -arr1[0];
+  }
+
+  // changing sign for neagtive number
+  else if (arr2[0] < 0) {
+    flag = 1;
+    arr2[0] = -arr2[0];
+  }
+
+  // finding the length of array
+  const len1 = arr1.length - 1;
+  const len2 = arr2.length - 1;
+
+  // Initialize an array to store the result, resultant array will be adition of length of two array
+  const result = new Array(2 + len1 + len2).fill(0);
+
+  // Nested loop for multiplication
+  for (let i = len1; i >= 0; i--) {
+    for (let j = len2; j >= 0; j--) {
+      const product = arr1[i] * arr2[j];
+      const sum = result[i + j + 1] + product;
+
+      result[i + j + 1] = sum % 10; // Update the current digit
+      result[i + j] += Math.floor(sum / 10); // Add carry to the previous digit
     }
+  }
 
-	// changing sign for neagtive number
-    else if(arr1[0]<0)
-    {
-        flag=1
-        arr1[0]= -arr1[0]
-    }
+  // Remove leading zeros
+  while (result[0] === 0 && result.length > 1) {
+    result.shift();
+  }
 
-	// changing sign for neagtive number
-    else if(arr2[0]<0)
-    {
-        flag=1
-        arr2[0]=-arr2[0]
-    }
+  // adding negative sign if multiplication is negative
+  if (flag == 1) {
+    result.unshift("-");
+  }
 
-	// finding the length of array
-    const len1 = arr1.length-1;
-    const len2 = arr2.length-1;
-
-    // Initialize an array to store the result, resultant array will be adition of length of two array
-    const result = new Array(2 + len1 + len2).fill(0);
-
-    // Nested loop for multiplication
-    for (let i = len1; i >= 0; i--) {
-        for (let j = len2; j >= 0; j--) {
-            const product = arr1[i] * arr2[j];
-            const sum = result[i + j + 1] + product;
-
-            result[i + j + 1] = sum % 10; // Update the current digit
-            result[i + j] += Math.floor(sum / 10); // Add carry to the previous digit
-        }
-    }
-
-    // Remove leading zeros
-    while (result[0] === 0 && result.length > 1) {
-        result.shift();
-    }
-
-    // adding negative sign if multiplication is negative
-    if(flag==1)
-    {
-        result.unshift("-")
-    }
-    
-    return result.join("")
+  return result.join("");
 }
 
-let num1 = [-1,2];
-let num2 = [1,2];
+let num1 = [1,2,3,2,3,4,5,6,9];
+let num2 = [-1, 2,3,4,7,7,5,5,4,3,9,8];
 
-console.log("Multiplication of ",num1.join(""),"*", num2.join(""),"=",multiply(num1, num2)); 
+console.log(
+  "Multiplication of ",
+  num1.join(""),
+  "*",
+  num2.join(""),
+  "=",
+  multiply(num1, num2)
+);
 

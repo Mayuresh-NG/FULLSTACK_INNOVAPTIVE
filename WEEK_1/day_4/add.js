@@ -13,6 +13,9 @@ function add(arr1, arr2) {
   if (arr1.length == 0 || arr2.length == 0) {
     throw new Error("you must provide two numbers to perfrom addition");
   }
+  if (arr1[0] < 0 || arr2[0] < 0) {
+    throw new Error("Negative values in the array are not allowed.");
+  } 
   /**
    * @maxi - length of the longest array
    * @mini - length of the smallest array

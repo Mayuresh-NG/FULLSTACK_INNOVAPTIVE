@@ -2,20 +2,16 @@
  * This is a program to subtract two arrays such that they imitates arithmetic style subtraction of numbers
  */
 
-
 /**
  * @function validation - It is a function to handle invalid user inputs
  */
 function validation(arr1, arr2) {
-    if(arr1.length==0 || arr2.length==0)
-    {
-       throw new Error("NUll arrays are not accepted");
-    }
-    if(arr1[0]<0 || arr2[0]<0)
-    {
-        throw new Error( "Negative values in the array are not allowed."); 
-    }
-    else return true;
+  if (arr1.length == 0 || arr2.length == 0) {
+    throw new Error("NUll arrays are not accepted");
+  }
+  if (arr1[0] < 0 || arr2[0] < 0) {
+    throw new Error("Negative values in the array are not allowed.");
+  } else return true;
 }
 
 /**
@@ -67,7 +63,7 @@ function sub(arr1, arr2) {
     // then add negative sign in front
     if (arr1 < arr2) {
       res.unshift("-");
-    } 
+    }
     // if there is extra 0 in front remove it
     else if (res[0] == 0) {
       res.shift();
@@ -77,7 +73,14 @@ function sub(arr1, arr2) {
   }
 }
 
-const num1 = [1,2,5]; //first number
-const num2 = [9, 9, 9, 9]; //second number
+const num1 = [-1, 2, 3]; //first number
+const num2 = [5]; //second number
 
-console.log("Subtraction of",num1.join(""),"-",num2.join(""),"=",sub(num1, num2));
+console.log(
+  "Subtraction of",
+  num1.join(""),
+  "-",
+  num2.join(""),
+  "=",
+  sub(num1, num2)
+);
