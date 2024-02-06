@@ -9,7 +9,8 @@
  * @property {node} next - A reference to the next node in the linked list.
  */
 class node {
-  constructor(value) {
+  constructor(value) {\
+    
     this.value = value;
     this.next = null;
   }
