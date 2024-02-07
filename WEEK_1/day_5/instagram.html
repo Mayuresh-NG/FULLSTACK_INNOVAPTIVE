@@ -26,11 +26,14 @@
             font-size: 24px;
             font-weight: bold;
             color: #333;
+            font-family: 'Dancing Script';
+            font-size: 32px;
+            margin-left: 20px;
         }
 
         .search-container {
-            flex-grow: 1; /* Make the search container grow to take available space */
-            margin: 19px 150px 19px 150px; /* Add some spacing on the left and right of the search container */
+            flex-grow: 1;
+            margin: 19px 150px;
             position: relative;
         }
 
@@ -53,6 +56,7 @@
 
         .nav-icons {
             display: flex;
+            margin-right: 20px;
         }
 
         .nav-icon {
@@ -65,17 +69,86 @@
         .nav-icon:last-child {
             margin-right: 0;
         }
+
+        .post-card {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .username {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .post-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .interaction-icons {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .interaction-icon {
+            font-size: 20px;
+            margin-right: 5px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .add-comment {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .add-comment-text {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="logo" style="font-family: 'Dancing Script';font-size: 32px;margin-left: 140px;">Instagram</div>
+    <div class="navbar" style="padding:5px 0px 5px 0px;">
+        <div class="logo" style="margin-left: 150px;">Instagram</div>
         <div class="search-container">
             <input type="text" class="search-input" placeholder="Search">
             <i class="fas fa-search search-icon"></i>
         </div>
-        <div class="nav-icons" style="margin-right:140px;">
+        <div class="nav-icons" style="margin-right: 150px;">
             <i class="fas fa-home nav-icon"></i>
             <i class="far fa-compass nav-icon"></i>
             <i class="far fa-heart nav-icon"></i>
@@ -84,6 +157,41 @@
     </div>
 
     <!-- Your main content goes here -->
-
+    <div class="post-card">
+        <div class="profile-info">
+            <div class="profile-photo">
+                <img src="profile.jpg" alt="Profile Photo">
+            </div>
+            <div class="username">Mayuresh Gorantiwar</div>
+        </div>
+        <img class="post-image" src="postimage.jpg" alt="Posted Image">
+        <div class="interaction-icons">
+            <i class="far fa-heart interaction-icon"></i>
+            <i class="far fa-comment interaction-icon"></i>
+            <i class="fas fa-share interaction-icon"></i>
+        </div>
+        <div class="add-comment">
+            <span class="add-comment-text">Add a comment...</span>
+        </div>
+    </div>
+    <div class="post-card">
+        <div class="profile-info">
+            <div class="profile-photo">
+                <img src="profile.jpg" alt="Profile Photo">
+            </div>
+            <div class="username">Mayuresh Gorantiwar</div>
+        </div>
+        <img class="post-image" src="sec.jpg" alt="Posted Image">
+        <div class="interaction-icons">
+            <i class="far fa-heart interaction-icon"></i>
+            <i class="far fa-comment interaction-icon"></i>
+            <i class="fas fa-share interaction-icon"></i>
+        </div>
+        <div class="add-comment">
+            <span class="add-comment-text">Add a comment...</span>
+        </div>
+    </div>
 </body>
 </html>
+
+add a column container having two rows of box besides the post card
