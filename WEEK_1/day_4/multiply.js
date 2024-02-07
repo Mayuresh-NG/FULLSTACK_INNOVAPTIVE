@@ -1,10 +1,12 @@
 /**
- * Multiply two numbers represented as arrays
+ * Program to multiply two numbers which will be provided by user in the form of an array
+ */
+
+/**Multiply two numbers represented as arrays
  * @param {Array} arr1 - First Number Array
  * @param {Array} arr2 - Second Number Array
  * @returns {Array} result - The product of the two numbers as an array.
  */
-
 function multiply(arr1, arr2) {
   // flag to check negative numbers
   let flag = 0;
@@ -58,6 +60,7 @@ function multiply(arr1, arr2) {
   return result.join("");
 }
 
+// INPUTS
 let num1 = [1,2];
 let num2 = [1,2];
 

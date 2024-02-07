@@ -2,8 +2,10 @@
  * This is a program to subtract two arrays such that they imitates arithmetic style subtraction of numbers
  */
 
-/**
+/**function to perform bsic validations on input provided by user
  * @function validation - It is a function to handle invalid user inputs
+ * @param {Array} arr1 - Consider it to be first number provided by user
+ * @param {Array} arr2 - Consider it to be second number provided by user
  */
 function validation(arr1, arr2) {
   function isSingleDigit(num) {
@@ -38,7 +40,7 @@ function validation(arr1, arr2) {
 }
 
 
-/**
+/**Main function to subtract two numbers
  * @function sub - subtracts the two array
  * @param {Array} arr1 - First array
  * @param {Array} arr2 - Second array
@@ -63,7 +65,7 @@ function sub(arr1, arr2) {
       minarr = arr1;
     }
 
-    // carry is used to keep the track of number
+    // carry is used to keep the track of borrow
     let carry = 0;
     /**
      * @param {Array} res - resultant array after subtraction
@@ -82,13 +84,9 @@ function sub(arr1, arr2) {
 
       mini--;
     }
-
+    
     // if number to be subtracted is smaller than number  being subtracted from
     // then add negative sign in front
-    if (carry > 0) {
-      res.unshift(carry);
-    }
-
     let lenarr1 = parseInt(arr1.join(""), 10);
     let lenarr2 = parseInt(arr2.join(""), 10);
     if (lenarr1 < lenarr2) {
@@ -113,6 +111,7 @@ function sub(arr1, arr2) {
   }
 }
 
+// INPUTS
 const num1 = [1,2,3]; //first number
 const num2 = [4,5,0]; //second number
 

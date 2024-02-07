@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Style Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .search-container {
+            flex-grow: 1; /* Make the search container grow to take available space */
+            margin: 19px 150px 19px 150px; /* Add some spacing on the left and right of the search container */
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .nav-icons {
+            display: flex;
+        }
+
+        .nav-icon {
+            margin-right: 20px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .nav-icon:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo" style="font-family: 'Dancing Script';font-size: 32px;margin-left: 140px;">Instagram</div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="nav-icons" style="margin-right:140px;">
+            <i class="fas fa-home nav-icon"></i>
+            <i class="far fa-compass nav-icon"></i>
+            <i class="far fa-heart nav-icon"></i>
+            <i class="far fa-user nav-icon"></i>
+        </div>
+    </div>
+
+    <!-- Your main content goes here -->
+
+</body>
+</html>

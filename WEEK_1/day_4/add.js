@@ -2,8 +2,7 @@
  * This is a program to add two numbers which will be of form arrays
  */
 
-/**
- *
+/**Main function performing addition of two numbers
  * @param {Array} arr1 - First Number Array
  * @param {Array} arr2 - Second Number Array
  * @returns  {Array} - The Sum of the Two Numbers as an Array.
@@ -64,6 +63,7 @@ function add(arr1, arr2) {
   return res.join("");
 }
 
+// INPUTS
 const num1 = [1, 5];
 const num2 = [4, 5, 3, 9, 4];
 
@@ -75,3 +75,4 @@ console.log(
   "=",
   add(num1, num2)
 );
+
