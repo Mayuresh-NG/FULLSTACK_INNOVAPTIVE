@@ -1,249 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-    }
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      href="codepenstyle.css"
+      rel="stylesheet"
+    />
+  </head>
 
-    .topbar {
-        width: 100vw;
-        height: 9vh;
-        background-color: #010101;
-        position: fixed;
-        top: 0;
-        display: flex;
-        justify-content: flex-start; 
-        align-items: center;
-        padding: 0 10px;
-    }
+  <body>
+    <div class="topbar" style="font-family: Lato">
+      <img
+        style="height: 30px; width: 30px; margin-right: 10px"
+        src="logo-white.png"
+        alt="My Happy SVG"
+      />
+      <div class="topbar-text" style="font-size: 19.5px">
+        instagram clone <br /><span style="font-size: 13.5px; color: #9b9dad">
+          Kolade Olusola
+        </span>
+        <i
+          class="fa fa-plus"
+          style="
+            font-size: 12px;
+            background-color: #47cf73;
+            color: #010101;
+            padding: 2px;
+            border-radius: 2px;
+          "
+          >Follow</i
+        >
+      </div>
 
-    .topbar-text {
-        color: white;
-        margin-right: auto;
-        font-family: "Lato";
-        font-weight: 400;
-    }
+      <button>
+        <i class="fa fa-heart" style="padding: 3.5px 7px 3.5px 7px"></i>
+      </button>
 
-    .topbar button {
-        background-color: #444857;
-        border: none;
-        padding: 11px 11px;
-        color: white;
-        margin-right: 10px;
-        cursor: pointer;
-        border-radius: 3px;
-        font-size: 15px;
-        font-family: Lato;
-    }
+      <button
+        style="
+          display: flex;
+          align-items: center;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 11px;
+          padding-bottom: 11px;
+        "
+      >
+        <i class="fa fa-cog" style="font-size: 18px; margin-right: 2px"></i>
+        <span style="padding: 2px 2px 2px 2px">Settings</span>
+      </button>
 
-    .bottombar {
-        width: 100vw;
-        height: 4.5vh;
-        background-color: #2C303A;
-        position: fixed;
-        bottom: 0;
-        padding: 0px 5px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    .button1 {
-        background-color: #444857;
-        color: white;
-        padding: 5px 5px;
-        margin-right: 5px;
-        border: none;
-        border-radius: 2px;
-        font-size: 12px; 
-    }
-
-    .button2-container {
-        margin-left: 69.5%; 
-        display: flex;
-    }
-
-    .button2 {
-        background-color: #444857;
-        color: white;
-        padding: 4px 8px 4px 8px;
-        margin-right: 4px;
-        border: none;
-        border-radius: 2px;
-        font-size: 12px;
-    }
-
-    .row {
-        display: flex;
-    }
-
-    .column1 {
-        top:9vh;
-        background-color: white;
-        position: relative;
-        height: 87vh;
-        width: 72vw;
-    }
-
-    .column2 {
-        top: 9vh;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background-color: #010101;
-        width: 28vw;
-    }
-
-    .rowincolumn {
-        height: 29vh;
-        width: 27vw;
-        background-color: #1D1E22;
-        margin-left: auto;
-    }
-
-    hr {
-        margin: 1px 15.5px;
-        border: none;
-        border-top: 2px solid #2F2F2F;
-        width:414px;
-    }
-
-    .container {
-        width: 393px;
-        height: 160px; 
-        overflow: auto; 
-        border-bottom: 0.5px solid rgb(59, 59, 59);
-        padding-top: 5px; 
-        padding-left: 15px;
-        color: white;
-        font-family: consolas;
-        font-size: 14px;
-        font-weight: 200;
-    }
-
-    .container:focus {
-        border: none;
-        outline: none;
-    }
-
-</style>
-<body>
-    <div class="topbar" style="font-family: Lato;">
-        <img style="height:30px;width:30px; margin-right: 10px;" src = "logo-white.png" alt="My Happy SVG"/>
-        <div class="topbar-text" style="font-size: 19.5px;">instagram clone
-            <br><span style="font-size: 13.5px;color: #9B9DAD;">
-                Kolade Olusola
-            </span>
-                <i class="fa fa-plus" style="font-size:12px; background-color:#47CF73;color: #010101; padding: 2px;border-radius: 2px;">Follow</i>
-            </div>
-        
-            <button><i class="fa fa-heart" style="padding: 3.5px 7px 3.5px 7px;"></i></button>
-
-            <button style="display: flex; align-items: center;padding-left: 15px;padding-right: 15px;padding-top:11px;padding-bottom:11px;">
-                <i class="fa fa-cog" style="font-size: 18px; margin-right: 2px;"></i>
-                <span style="padding: 2px 2px 2px 2px;">Settings</span>
-              </button>
-
-        <button><i class="fa fa-th-large" style="padding: 3.5px 7px 3.5px 7px;"></i></button>
-        <button style="color: black; background-color: #47CF73; padding: 12px 19px 12px 19px;">Sign Up</button>
-        <button style="padding: 12px 19px 12px 19px;margin-right:20px;">Log In</button>
+      <button>
+        <i class="fa fa-th-large" style="padding: 3.5px 7px 3.5px 7px"></i>
+      </button>
+      <button
+        style="
+          color: black;
+          background-color: #47cf73;
+          padding: 12px 19px 12px 19px;
+        "
+      >
+        Sign Up
+      </button>
+      <button style="padding: 12px 19px 12px 19px; margin-right: 20px">
+        Log In
+      </button>
     </div>
 
     <div class="row">
-        <div class="column1">
-            <embed type="text/html" src="instagram.html" width="1105.910px" height="600px">
+      <div class="column1">
+        <embed
+          type="text/html"
+          src="instagram.html"
+          width="100%"
+          height="100%"
+        />
+      </div>
+      <div class="column2">
+        <div class="rowincolumn">
+          <nav style="display: flex; align-items: center">
+            <button
+              style="
+                background-color: #1d1e22;
+                border: 3px solid #34363e;
+                border-left: none;
+                border-right: none;
+                border-bottom: none;
+                padding: 8.5px;
+              "
+            >
+              <i class="fa fa-code" style="color: #ff3c41; font-size: 15px"></i>
+              <span
+                style="
+                  font-family: Lato;
+                  font-size: 17px;
+                  font-weight: bold;
+                  color: #aaaebc;
+                "
+                >HTML</span
+              >
+            </button>
+            <div
+              style="background-color: #010101; padding: 10px; width: 310.5px"
+            >
+              <button
+                style="
+                  background-color: #444857;
+                  border: none;
+                  padding: 0.5px 9px 0.5px 9px;
+                  margin-left: 255.5px;
+                  border-radius: 3px;
+                "
+              >
+                <i class="fa fa-cog" style="color: white; font-size: 10px"></i>
+              </button>
+              <button
+                style="
+                  background-color: #444857;
+                  border: none;
+                  padding: 0.5px 9px 0.5px 9px;
+                  border-radius: 3px;
+                "
+              >
+                <i
+                  class="fa fa-caret-down"
+                  style="color: white; font-size: 10px"
+                ></i>
+              </button>
+            </div>
+          </nav>
+          <div class="container" contenteditable="true">
+            <!-- Users can edit the content here -->
+            <p></p>
+          </div>
         </div>
-        <div class="column2">
-           
-            <div class="rowincolumn">
-                <nav style="display: flex; align-items: center;">
-                    <button style="background-color: #1D1E22; border: 3px solid #34363E;
-                    border-left: none; border-right: none; border-bottom: none; padding: 8.5px;">
-                        <i class="fa fa-code" style="color: #FF3C41; font-size: 15px;"></i>
-                        <span style="font-family: Lato; font-size: 17px; font-weight: bold; color: #AAAEBC;">HTML</span>
-                    </button>
-                    <div style="background-color:#010101;padding: 10px;width: 310.5px;">
-                        <button style="background-color: #444857; border: none; padding: 0.5px 9px 0.5px 9px; margin-left: 255.5px;border-radius: 3px;">
-                            <i  class="fa fa-cog" style="color: white; font-size: 10px;"></i>
-                        </button>
-                        <button style="background-color: #444857; border: none; padding: 0.5px 9px 0.5px 9px; border-radius: 3px;">
-                            <i class="fa fa-caret-down" style="color: white; font-size: 10px;"></i>
-                        </button>
-                    </div>
-                </nav>
-                <div class="container" contenteditable="true">
-                    <!-- Users can edit the content here -->
-                    <p></p>
-                </div>
+
+        <div class="rowincolumn">
+          <nav style="display: flex; align-items: center">
+            <button
+              style="
+                background-color: #1d1e22;
+                border: 3px solid #34363e;
+                border-left: none;
+                border-right: none;
+                border-bottom: none;
+                padding: 8.5px;
+              "
+            >
+              <i class="fa fa-css3" style="color: #0ebeff; font-size: 15px"></i>
+              <span
+                style="
+                  font-family: Lato;
+                  font-size: 17px;
+                  font-weight: bold;
+                  color: #aaaebc;
+                "
+                >CSS</span
+              >
+            </button>
+            <div style="background-color: #010101; padding: 10px; width: 329px">
+              <button
+                style="
+                  background-color: #444857;
+                  border: none;
+                  padding: 0.5px 9px 0.5px 9px;
+                  margin-left: 273px;
+                  border-radius: 3px;
+                "
+              >
+                <i class="fa fa-cog" style="color: white; font-size: 10px"></i>
+              </button>
+              <button
+                style="
+                  background-color: #444857;
+                  border: none;
+                  padding: 0.5px 9px 0.5px 9px;
+                  border-radius: 3px;
+                "
+              >
+                <i
+                  class="fa fa-caret-down"
+                  style="color: white; font-size: 10px"
+                ></i>
+              </button>
             </div>
-            
-            <div class="rowincolumn">
-                <nav style="display: flex; align-items: center;">
-                    <button style="background-color: #1D1E22; border: 3px solid #34363E;
-                    border-left: none; border-right: none; border-bottom: none; padding: 8.5px;">
-                        <i class="fa fa-css3" style="color: #0EBEFF; font-size: 15px;"></i>
-                        <span style="font-family: Lato; font-size: 17px; font-weight: bold; color: #AAAEBC;">CSS</span>
-                    </button>
-                    <div style="background-color:#010101;padding: 10px;width: 329px;">
-                        <button style="background-color: #444857; border: none; padding: 0.5px 9px 0.5px 9px; margin-left: 273px;border-radius: 3px;">
-                            <i  class="fa fa-cog" style="color: white; font-size: 10px;"></i>
-                        </button>
-                        <button style="background-color: #444857; border: none; padding: 0.5px 9px 0.5px 9px; border-radius: 3px;">
-                            <i class="fa fa-caret-down" style="color: white; font-size: 10px;"></i>
-                        </button>
-                    </div>
-                </nav>
-                <div class="container" contenteditable="true">
-                    <!-- Users can edit the content here -->
-                    <p></p>
-                </div>
-            </div>
-            
-            <div class="rowincolumn">
-                <nav style="display: flex; align-items: center;">
-                    <button style="background-color: #1D1E22; border: 3px solid #34363E;
-                    border-left: none; border-right: none; border-bottom: none; padding: 8.5px;">
-                        <i class="fa fa-refresh" style="color: #FCD000; font-size: 15px;"></i>
-                        <span style="font-family: Lato; font-size: 17px; font-weight: bold; color: #AAAEBC;">JS</span>
-                    </button>
-                    <div style="background-color:#010101;padding: 10px;width: 344.5px;">
-                        <button style="background-color: #444857; border: none; padding: 0.5px 9px 0.5px 9px; margin-left: 290px;border-radius: 3px;">
-                            <i  class="fa fa-cog" style="color: white; font-size: 10px;"></i>
-                        </button>
-                        <button style="background-color: #444857; border: none; padding: 0.5px 9px 0.5px 9px; border-radius: 3px;">
-                            <i class="fa fa-caret-down" style="color: white; font-size: 10px;"></i>
-                        </button>
-                    </div>
-                </nav>
-                <div class="container" contenteditable="true">
-                    <!-- Users can edit the content here -->
-                    <p></p>
-                </div>
-            </div>
+          </nav>
+          <div class="container" contenteditable="true">
+            <!-- Users can edit the content here -->
+            <p></p>
+          </div>
         </div>
+
+        <div class="rowincolumn">
+          <nav style="display: flex; align-items: center">
+            <button
+              style="
+                background-color: #1d1e22;
+                border: 3px solid #34363e;
+                border-left: none;
+                border-right: none;
+                border-bottom: none;
+                padding: 8.5px;
+              "
+            >
+              <i
+                class="fa fa-refresh"
+                style="color: #fcd000; font-size: 15px"
+              ></i>
+              <span
+                style="
+                  font-family: Lato;
+                  font-size: 17px;
+                  font-weight: bold;
+                  color: #aaaebc;
+                "
+                >JS</span
+              >
+            </button>
+            <div
+              style="background-color: #010101; padding: 10px; width: 344.5px"
+            >
+              <button
+                style="
+                  background-color: #444857;
+                  border: none;
+                  padding: 0.5px 9px 0.5px 9px;
+                  margin-left: 290px;
+                  border-radius: 3px;
+                "
+              >
+                <i class="fa fa-cog" style="color: white; font-size: 10px"></i>
+              </button>
+              <button
+                style="
+                  background-color: #444857;
+                  border: none;
+                  padding: 0.5px 9px 0.5px 9px;
+                  border-radius: 3px;
+                "
+              >
+                <i
+                  class="fa fa-caret-down"
+                  style="color: white; font-size: 10px"
+                ></i>
+              </button>
+            </div>
+          </nav>
+          <div class="container" contenteditable="true">
+            <!-- Users can edit the content here -->
+            <p></p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="bottombar">
-        <button class="button1">Console</button>
-        <button class="button1">Assets</button>
-        <button class="button1">Comments</button>
-        <button class="button1">Shortcuts</button>
+      <button class="button1">Console</button>
+      <button class="button1">Assets</button>
+      <button class="button1">Comments</button>
+      <button class="button1">Shortcuts</button>
 
-        <div class="button2-container">
-            <button class="button2"><i class="fa fa-code-fork">Fork</i></button>
-            <button class="button2">Embed</button>
-            <button class="button2">Export</button>
-            <button class="button2">Share</button>
-        </div>
+      <div class="button2-container">
+        <button class="button2"><i class="fa fa-code-fork">Fork</i></button>
+        <button class="button2">Embed</button>
+        <button class="button2">Export</button>
+        <button class="button2">Share</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
