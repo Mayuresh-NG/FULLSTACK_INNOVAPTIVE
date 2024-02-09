@@ -12,7 +12,6 @@ body {
   padding-left: 16px;
   padding-right: 16px;
   justify-content: space-between;
-  
 }
 .container2 {
   display: flex;
@@ -26,8 +25,27 @@ body {
   overflow-x: auto;
   flex-direction: column;
   height: 650px;
-  scrollbar-width: thin; /* For Firefox */
+}
+
+.side-menu::-webkit-scrollbar {
+  width: 12px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.side-menu:hover::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+.side-menu {
+  scrollbar-width: thin;
   scrollbar-color: transparent transparent;
+}
+
+.side-menu:hover {
+  scrollbar-color: gray transparent;
 }
 
 .categories {
@@ -53,12 +71,14 @@ body {
 }
 
 .search-input {
+  padding-left: 16px;
+  padding-right: 14px;
   padding: 10px;
   border: 2px solid #222222;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   outline: none;
-  width: 535.2px;
+  width: 515.2px;
   height: 38.4;
   background-color: #121212;
   color: white;
@@ -68,7 +88,7 @@ body {
   border: 2px solid #222222;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  height: 36.4; /* Adjusted height to match search input */
+  height: 36.4;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   width: 60.4px;
@@ -80,7 +100,7 @@ body {
   padding: 10px;
   border: 1px solid #222222;
   border-radius: 0 5px 5px 0;
-  border: none; /* Remove blue highlight border */
+  border: none;
   background-color: transparent;
   margin-left: 10px;
 }
@@ -110,9 +130,9 @@ body {
 }
 
 .rounded-button {
-  padding: 16px 12px 16px 12px;
-  border-radius: 8px; /* Adjust border-radius for rounded corners */
-  font-size: 14px; /* Set the desired text height */
+  padding: 16px 12px;
+  border-radius: 8px;
+  font-size: 14px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -124,6 +144,11 @@ body {
   background-color: #272727;
   margin-right: 12px;
   font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.rounded-button:hover {
+  background-color: #464646;
 }
 
 .container {
@@ -131,6 +156,13 @@ body {
   align-items: center;
   padding: 5px;
   margin-left: 10px;
+  margin-bottom: 3px;
+  transition: background-color 0.3s;
+}
+
+.container:hover {
+  background-color: #272727;
+  border-radius: 10px;
 }
 
 .icon {
@@ -155,65 +187,73 @@ hr {
 }
 
 .video-container {
-    max-width: 400px;
-    margin-bottom: 5px;
-    background-color: #0f0f0f;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    height: 225px;
+  max-width: 400px;
+  margin-bottom: 5px;
+  background-color: #0f0f0f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 225px;
 }
 
 .video-images {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
 }
 
 .info-container {
-    max-width: 400px;
-    background-color: #0F0F0F;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    height: 95px;
-    padding: 5px;
+  max-width: 400px;
+  background-color: #0f0f0f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 95px;
+  padding: 5px;
 }
 
 .channel-logo {
-    width: 36px; /* Adjust the size as needed */
-    height: 36px; /* Adjust the size as needed */
-    object-fit: cover;
-    border-radius: 50%; /* Make the logo circular */
-    margin-right: 20px;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
 .video-title {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: white;
-    font-family: sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+  font-family: sans-serif;
 }
 
 .channel-name {
-    color: #AAAAAA;
-    font-size: 14px;
-    margin-bottom: 3px;
-    font-family: sans-serif;
-    margin-left: 55px;
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-bottom: 3px;
+  font-family: sans-serif;
+  margin-left: 55px;
 }
 
 .views-time {
-    color: #AAAAAA;
-    font-size: 14px;
-    font-family: sans-serif;
-    margin-left: 55px;
+  color: #aaaaaa;
+  font-size: 14px;
+  font-family: sans-serif;
+  margin-left: 55px;
 }
 
 .logo {
-    width: 28px; /* Adjust the size as needed */
-    height: 28px; /* Adjust the size as needed */
-    object-fit: cover;
-    border-radius: 50%; /* Make the logo circular */
-    margin-right: 20px;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 17px;
+}
+
+* {
+  scrollbar-color: gray #0f0f0f;
 }
