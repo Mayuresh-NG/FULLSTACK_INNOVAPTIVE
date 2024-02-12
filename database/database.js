@@ -122,38 +122,76 @@ function deleteData(databaseName, tableName, targetId) {
   }
 }
 
-// Example usage
-createDatabaseFolder('db2');
-createTableFile('db2', 'users');
+/** Function to delete a database folder and its contents */
+function deleteDatabase(databaseName) {
+  const folderPath = path.join(__dirname, databaseName);
+
+  // Check if the folder exists
+  if (fs.existsSync(folderPath)) {
+    fs.rmdirSync(folderPath, { recursive: true });
+    console.log(`Database folder '${databaseName}' and its contents have been deleted.`);
+  } else {
+    console.log(`Database folder '${databaseName}' does not exist.`);
+  }
+}
+
+/** Function to delete a table file */
+function deleteTableFile(databaseName, tableName) {
+  const folderPath = path.join(__dirname, databaseName);
+  const filePath = path.join(folderPath, `${tableName}.txt`);
+
+  // Check if the file exists
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
+    console.log(`Table file '${tableName}' in the '${databaseName}' database has been deleted.`);
+  } else {
+    console.log(`Table file '${tableName}' in the '${databaseName}' database does not exist.`);
+  }
+}
+
+//Example usage
+createDatabaseFolder('db3');
+createTableFile('db3', 'users');
 
 const newData = {
-  id: 1,
-  name: 'Mayuresh Gorantiwar',
+  id: 2,
+  name: 'M',
   age: 22,
   department: 'HR'
 };
 
 // Create operation
-dataEntry('db2', 'users', newData);
+dataEntry('db3', 'users', newData);
 
 // Read operation
-const readResult = readData('db2', 'users');
+const readResult = readData('db3', 'users');
 console.log('Read Result:', readResult);
 
 // Update operation
 const updateDataInput = {
   id: 1,
-  department: 'IT'
+  department: 'HR'
 };
-updateData('db2', 'users', 1, updateDataInput);
+updateData('db3', 'users', 1, updateDataInput);
 
 // Read updated data
-const updatedReadResult = readData('db2', 'users');
+const updatedReadResult = readData('db3', 'users');
 console.log('Updated Read Result:', updatedReadResult);
 
-// Delete operation
-deleteData('db2', 'users', 1);
+// Delete data or record
+deleteData('db3', 'users', 1);
 
 // Read data after delete operation
-const afterDeleteReadResult = readData('db2', 'users');
+const afterDeleteReadResult = readData('db3', 'users');
 console.log('After Delete Read Result:', afterDeleteReadResult);
+
+// Delete table file
+deleteTableFile('db2', 'users');
+
+// Attempt to read data after deleting the table file
+const afterTableFileDeleteReadResult = readData('db3', 'users');
+console.log('After Table File Delete Read Result:', afterTableFileDeleteReadResult);
+
+// Delete database
+deleteDatabase('db2');
+

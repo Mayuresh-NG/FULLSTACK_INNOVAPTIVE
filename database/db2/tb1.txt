@@ -1,7 +1,0 @@
-[
-  {
-    "name": "Mayuresh Gorantiwar",
-    "age": 22,
-    "department": "Fullstack-development"
-  }
-]

@@ -5,10 +5,10 @@ class Mydatabase
     connect("database_name");
 
         folder file line 
-    C
-    R
-    U
-    D
+    C   1       1     1
+    R                 1
+    U                 1
+    D   1       1     1 
 
     12 functions
 }
