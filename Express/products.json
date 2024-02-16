@@ -1,0 +1,34 @@
+[
+  {
+    "productId": 1,
+    "productName": "A",
+    "description": "This is the description for Product A.",
+    "price": 19.99,
+    "stock": 88,
+    "imageUrl": "https://example.com/productA.jpg"
+  },
+  {
+    "productId": 2,
+    "productName": "B",
+    "description": "Description for Product B goes here.",
+    "price": 29.99,
+    "stock": 28,
+    "imageUrl": "https://example.com/productB.jpg"
+  },
+  {
+    "productId": 3,
+    "productName": "C",
+    "description": "Product C is an amazing product.",
+    "price": 39.99,
+    "stock": 20,
+    "imageUrl": "https://example.com/productC.jpg"
+  },
+  {
+    "productId": 5,
+    "productName": "New Product",
+    "description": "Newly added product through post_product",
+    "price": 50,
+    "stock": 20,
+    "imageUrl": "https://example.com/prod.jpg"
+  }
+]
